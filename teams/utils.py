@@ -1,6 +1,6 @@
-from .exceptions import ImpossibleTitlesError
-from .exceptions import InvalidYearCupError
-from .exceptions import NegativeTitlesError
+from teams.exceptions import InvalidYearCupError
+from teams.exceptions import NegativeTitlesError
+from teams.exceptions import ImpossibleTitlesError
 from datetime import datetime, timedelta
 
 
@@ -16,7 +16,6 @@ def data_processing(team_data):
 
     for year in range(first_cup_ever, int(current_year) + 1):
         first_cup_ever += 4
-        print(first_cup_ever)
 
         if first_cup_ever != first_cup_date:
             raise InvalidYearCupError("there was no world cup this year")
