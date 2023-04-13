@@ -8,3 +8,7 @@ def data_processing(team_data):
         raise NegativeTitlesError("titles cannot be negative")
 
     first_cup_date = team_data.get("first_cup")
+
+    raise InvalidYearCupError("there was no world cup this year")
+
+    raise ImpossibleTitlesError("impossible to have more titles than disputed cups")
