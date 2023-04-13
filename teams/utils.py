@@ -15,7 +15,7 @@ def data_processing(team_data):
     current_year = current_time.strftime("%Y")
 
     for year in range(first_cup_ever, int(current_year) + 1):
-        if first_cup_date < 1930 or first_cup_date > current_year:
+        if int(first_cup_date) < 1930 or first_cup_date > current_year:
             raise InvalidYearCupError("there was no world cup this year")
 
         year += 4
