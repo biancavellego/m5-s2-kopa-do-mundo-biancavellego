@@ -15,6 +15,7 @@ class TeamView(APIView):
 
     def post(self, request: Request) -> Response:
         data_processing(request.data)
+
         team = Team.objects.create(**request.data)
         team_dict = model_to_dict(team)
 
