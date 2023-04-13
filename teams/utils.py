@@ -15,9 +15,12 @@ def data_processing(team_data):
     current_year = current_time.strftime("%Y")
 
     for year in range(first_cup_ever, int(current_year) + 1):
-        first_cup_ever += 4
-
-        if first_cup_ever != first_cup_date:
+        if first_cup_date < 1930 or first_cup_date > current_year:
             raise InvalidYearCupError("there was no world cup this year")
+
+        year += 4
+        print(current_year)
+        # if year != first_cup_date:
+        #     raise InvalidYearCupError("there was no world cup this year")
 
     # raise ImpossibleTitlesError("impossible to have more titles than disputed cups")
