@@ -1,6 +1,7 @@
 from .exceptions import ImpossibleTitlesError
 from .exceptions import InvalidYearCupError
 from .exceptions import NegativeTitlesError
+from datetime import datetime, timedelta
 
 
 def data_processing(team_data):
@@ -9,6 +10,16 @@ def data_processing(team_data):
 
     first_cup_date = team_data.get("first_cup")
 
-    raise InvalidYearCupError("there was no world cup this year")
+    first_cup_ever = 1930
+    current_time = datetime.now()
+    current_year = current_time.strftime("%Y")
 
-    raise ImpossibleTitlesError("impossible to have more titles than disputed cups")
+    for year in range(first_cup_ever, int(current_year) + 1):
+        first_cup_ever += year + 4
+
+        # if first_cup_ever != first_cup_date:
+        #     raise InvalidYearCupError("there was no world cup this year")
+
+    print(first_cup_date)
+
+    # raise ImpossibleTitlesError("impossible to have more titles than disputed cups")

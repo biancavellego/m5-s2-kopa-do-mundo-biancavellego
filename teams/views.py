@@ -14,6 +14,7 @@ class TeamView(APIView):
         return Response(teams_list, status.HTTP_200_OK)
 
     def post(self, request: Request) -> Response:
+        data_processing(request.data)
         team = Team.objects.create(**request.data)
         team_dict = model_to_dict(team)
 
