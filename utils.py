@@ -1,6 +1,6 @@
-from teams.exceptions import InvalidYearCupError
-from teams.exceptions import NegativeTitlesError
-from teams.exceptions import ImpossibleTitlesError
+from exceptions import InvalidYearCupError
+from exceptions import NegativeTitlesError
+from exceptions import ImpossibleTitlesError
 from datetime import datetime, timedelta
 
 
